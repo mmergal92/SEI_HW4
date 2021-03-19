@@ -76,3 +76,28 @@ sum +=cummulativeGross[i]
 console.log(sum)
 //not working correctly - adding it as a string instead of as numbers ( i think the replace method is wrong.)
 
+//get actor
+const actors = []
+for (let i =0; i<bondFilms.length; i++){
+if (Object.keys(actors).includes(bondFilms[i].actor)){
+  actors[bondFilms[i].actor]++
+  }else{
+    actors[bondFilms[i].actor] =1
+  }
+}
+console.log(actors)
+
+const minimum = Math.min(...Object.values(actors))
+console.log(minimum)
+
+const actor = Object.keys(actors).find(key =>{
+  if (actors[key]=== minimum){
+    return key
+  console.log(key)
+  }
+})
+for (let k= 0; k< bondFilms.length; k++){
+  if (bondFilms[k].actor === actor){
+    console.log(bondFilms[k])
+  }
+}
