@@ -61,20 +61,12 @@ for (let i=0; i<bondFilms.length; i++){
 console.log(oddBonds)
 
 //cumulative gross of Bond franchise and console.log result
-const cummulativeGross = []
+let cummulativeGross = 0
 for (let i= 0; i<bondFilms.length; i++){
-  // bondFilms[i].gross = parseInt(bondFilms[i].gross)
-  cummulativeGross.push(bondFilms[i].gross)
-  cummulativeGross[i] = bondFilms[i].gross.replace(/\$/g,'');
+  cummulativeGross = cummulativeGross + parseInt(bondFilms[i].gross.replace(/\$/g,'').replace(/,/g,""))
+  // console.log(bondFilms[i].gross.replace("$","").replace(/,/g,""))
 }
 console.log(cummulativeGross)
-
-let sum = 0
-for(let i=0; i<cummulativeGross.length; i++){
-sum +=cummulativeGross[i]
-}
-console.log(sum)
-//not working correctly - adding it as a string instead of as numbers ( i think the replace method is wrong.)
 
 //get actor
 const actors = []
